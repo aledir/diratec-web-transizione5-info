@@ -1,0 +1,677 @@
+/* frontend/components/Chat/Chat.module.css */
+
+/* ========== LAYOUT GENERALE ========== */
+.container {
+  min-height: 100vh;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  padding: 2rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.title {
+  margin: 0 0 2rem 0;
+  line-height: 1.15;
+  font-size: 2rem;
+  text-align: center;
+  color: #333;
+}
+
+.chatContainer {
+  width: 100%;
+  max-width: 800px;
+  height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.chatWidget {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: white;
+}
+
+.footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  border-top: 1px solid #eaeaea;
+  width: 100%;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+/* ========== HEADER CHAT ========== */
+.chatHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #2c3e50;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.chatHeader h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.connectionStatus {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.connected, .disconnected {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.connected {
+  background-color: #2ecc71;
+}
+
+.disconnected {
+  background-color: #e74c3c;
+}
+
+/* ========== AREA MESSAGGI ========== */
+.chatMessages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  height: 400px; 
+  max-height: 60vh;
+  position: relative;
+}
+
+.message {
+  display: flex;
+  margin-bottom: 1rem;
+  max-width: 80%;
+}
+
+.botMessage {
+  align-self: flex-start;
+}
+
+.humanMessage {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.messageContent {
+  padding: 0.75rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.botMessage .messageContent {
+  background-color: #f1f1f1;
+  margin-right: 1rem;
+  border-top-left-radius: 0;
+}
+
+.humanMessage .messageContent {
+  background-color: #3498db;
+  color: white;
+  margin-left: 1rem;
+  border-top-right-radius: 0;
+}
+
+.messageText {
+  word-break: break-word;
+}
+
+.messagesEndSpacer {
+  height: 40px;
+  width: 100%;
+}
+
+/* ========== INPUT E FORM ========== */
+.inputForm {
+  display: flex;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-top: 1px solid #eaeaea;
+}
+
+.inputField {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.inputField:focus {
+  border-color: #3498db;
+}
+
+.sendButton {
+  margin-left: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.sendButton:hover {
+  background-color: #2980b9;
+}
+
+.sendButton:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+/* ========== COMPONENTI FEEDBACK ========== */
+.loadingIndicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.loadingText {
+  font-size: 0.875rem;
+  color: #666;
+  font-style: italic;
+}
+
+.errorMessage {
+  align-self: center;
+  margin: 1rem 0;
+  padding: 0.75rem 1.5rem;
+  background-color: #fee;
+  color: #c00;
+  border-radius: 0.5rem;
+  border: 1px solid #fcc;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.errorIcon {
+  font-size: 1.25rem;
+}
+
+/* ========== DOMANDE PREDEFINITE ========== */
+.predefinedQuestions {
+  padding: 0.75rem 1rem;
+  background-color: #f9f9f9;
+  border-top: 1px solid #eaeaea;
+}
+
+.predefinedQuestionsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.25rem 0;
+}
+
+.predefinedQuestionsHeader h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.toggleIcon {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+.questionsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.questionButton {
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+}
+
+.questionButton:hover {
+  background-color: #f0f0f0;
+  border-color: #bbb;
+}
+
+/* ========== GESTIONE SESSIONE UTENTE ========== */
+.sessionManager {
+  padding: 0.75rem 1rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #eaeaea;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sessionLeft, .sessionRight {
+  display: flex;
+  align-items: center;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  transition: background-color 0.2s;
+}
+
+.userInfo:hover {
+  background-color: #efefef;
+}
+
+.userIcon {
+  margin-right: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.username {
+  font-weight: 500;
+  color: #444;
+}
+
+.editIcon {
+  margin-left: 0.5rem;
+  font-size: 0.875rem;
+  opacity: 0.6;
+}
+
+.sessionInfo {
+  display: flex;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #888;
+  margin-right: 1rem;
+}
+
+.sessionLabel {
+  margin-right: 0.25rem;
+}
+
+.sessionId {
+  font-family: monospace;
+  background-color: #f0f0f0;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.usernameForm {
+  display: flex;
+  width: 100%;
+}
+
+.usernameInput {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.usernameInput:focus {
+  border-color: #3498db;
+}
+
+.saveButton {
+  margin-left: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+}
+
+.saveButton:hover {
+  background-color: #2980b9;
+}
+
+.menuContainer {
+  position: relative;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+}
+
+.menuButton:hover {
+  background-color: #e0e0e0;
+}
+
+.menuDropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  overflow: hidden;
+  min-width: 150px;
+}
+
+.menuItem {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.menuItem:hover {
+  background-color: #f5f5f5;
+}
+
+/* ========== EFFETTI DIGITAZIONE E THINKING ========== */
+/* Cursore di digitazione */
+.cursor-typing {
+  display: inline-block;
+  width: 6px;
+  height: 14px;
+  background-color: #10b981;
+  margin-left: 2px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+  border-radius: 1px;
+  animation: blink 1s step-end infinite;
+}
+
+/* Wrapper per l'animazione di digitazione */
+.typingAnimationWrapper :global(.typing-animation) {
+  white-space: pre-wrap;
+  overflow: hidden;
+}
+
+/* ========== INDICATORE DI THINKING MIGLIORATO ========== */
+/* Wrapper per il contenitore dell'indicatore */
+.thinkingWrapper {
+  display: flex;
+  width: 100%;
+}
+
+/* Container principale dell'indicatore */
+.thinkingIndicatorEnhanced {
+  background-color: #f5f9ff;
+  border: 1px solid #e0ebfd;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  width: fit-content;
+  /* Dimensioni migliorate per evitare troncamento */
+  min-width: 280px;
+  max-width: 100%;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Contenuto dell'indicatore */
+.thinkingContent {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+}
+
+/* Container dell'icona */
+.thinkingIconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Assicura che il contenitore sia perfettamente quadrato */
+  min-width: 32px;
+  min-height: 32px;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px; /* Non deve mai ridimensionarsi */
+  background-color: #e5f1f9;
+  border-radius: 50%;
+  margin-right: 12px;
+  animation: pulseLight 2s infinite ease-in-out;
+}
+
+/* Icona nell'indicatore */
+.thinkingIcon {
+  width: 18px;
+  height: 18px;
+  color: #2c755c;
+}
+
+/* Container dei messaggi */
+.thinkingMessageContainer {
+  display: flex;
+  flex-direction: column;
+  /* Assicura che il contenitore dei messaggi prenda tutto lo spazio disponibile */
+  flex: 1;
+  min-width: 0; /* Importante per evitare overflow in flex container */
+}
+
+/* Etichetta del nome dell'assistente */
+.assistantNameLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: #2c755c;
+  margin-bottom: 4px;
+}
+
+/* Messaggio di thinking */
+.thinkingMessage {
+  font-size: 14px;
+  color: #4b5563;
+  font-weight: 400;
+  /* Permette al testo di andare a capo se necessario */
+  white-space: normal;
+  word-wrap: break-word;
+  line-height: 1.4;
+  animation: fadeSlideIn 0.4s ease-in-out;
+}
+
+/* Barra di progresso */
+.thinkingProgressBar {
+  height: 3px;
+  width: 100%;
+  background-color: #e5f1f9;
+  overflow: hidden;
+}
+
+/* Riempimento della barra di progresso */
+.thinkingProgressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #2c755c 0%, #34a853 100%);
+  transition: width 0.3s ease-in-out;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Container dei pulsanti dot */
+.thinkingPulsingDots {
+  display: flex;
+  justify-content: center;
+  padding: 6px 0;
+  gap: 6px;
+}
+
+/* Singolo dot pulsante */
+.thinkingPulsingDot {
+  width: 6px;
+  height: 6px;
+  background-color: #2c755c;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+/* Animazione specifica per ogni dot */
+.thinkingPulsingDot:nth-child(1) {
+  animation: pulseDot 1.4s infinite ease-in-out;
+}
+
+.thinkingPulsingDot:nth-child(2) {
+  animation: pulseDot 1.4s infinite ease-in-out;
+  animation-delay: 0.2s;
+}
+
+.thinkingPulsingDot:nth-child(3) {
+  animation: pulseDot 1.4s infinite ease-in-out;
+  animation-delay: 0.4s;
+}
+
+/* ========== ANIMAZIONI ========== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes pulseLight {
+  0%, 100% {
+    background-color: #e5f1f9;
+  }
+  50% {
+    background-color: #d0e7f5;
+  }
+}
+
+@keyframes pulseDot {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 600px) {
+  .chatContainer {
+    height: 90vh;
+  }
+  
+  .sessionManager {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .sessionRight {
+    margin-top: 0.5rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .sessionLeft {
+    width: 100%;
+  }
+}
+
+/* ========== DARK MODE ========== */
+@media (prefers-color-scheme: dark) {
+  .thinkingIndicatorEnhanced {
+    background-color: #1e2533;
+    border-color: #2d3748;
+  }
+  
+  .thinkingIconContainer {
+    background-color: #2d3748;
+  }
+  
+  .thinkingIcon {
+    color: #38a169;
+  }
+  
+  .assistantNameLabel {
+    color: #38a169;
+  }
+  
+  .thinkingMessage {
+    color: #e2e8f0;
+  }
+  
+  .thinkingProgressBar {
+    background-color: #2d3748;
+  }
+  
+  .thinkingProgressFill {
+    background: linear-gradient(90deg, #38a169 0%, #4fd1c5 100%);
+  }
+  
+  .thinkingPulsingDot {
+    background-color: #38a169;
+  }
+}

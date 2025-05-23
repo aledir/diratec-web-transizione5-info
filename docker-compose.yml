@@ -1,0 +1,145 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+      - NEXT_PUBLIC_CCAT_URL=https://api.${DOMAIN}
+      - NEXT_PUBLIC_CCAT_WS_URL=wss://api.${DOMAIN}/ws
+      - CCAT_API_KEY=${CCAT_API_KEY}
+    container_name: transizione5_frontend
+    restart: unless-stopped
+    command: sh -c "if [ \"$${NODE_ENV}\" = \"development\" ]; then npm run dev; else npm run start; fi"
+    volumes:
+      - ./frontend:/app
+      - frontend_node_modules:/app/node_modules
+      - ./shared/documents:/app/public/shared-documents
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - NEXT_PUBLIC_CCAT_URL=https://api.${DOMAIN}
+      - NEXT_PUBLIC_CCAT_WS_URL=wss://api.${DOMAIN}/ws
+      - CCAT_API_KEY=${CCAT_API_KEY}
+      - CCAT_API_KEY_WS=${CCAT_API_KEY_WS}
+      - CCAT_INTERNAL_URL=http://cheshire_cat_core:80
+      - NEXT_PUBLIC_BOT_NAME=${NEXT_PUBLIC_BOT_NAME}
+      - NEXT_PUBLIC_COMPANY_NAME=${NEXT_PUBLIC_COMPANY_NAME}
+      - NEXT_PUBLIC_ENABLE_CONVERSATION_SAVE=${NEXT_PUBLIC_ENABLE_CONVERSATION_SAVE}
+      - NEXT_PUBLIC_MAX_SAVED_CONVERSATIONS=${NEXT_PUBLIC_MAX_SAVED_CONVERSATIONS}
+    networks:
+      - transizione5_network
+      - diratec_web_network  # Rete condivisa con Traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=diratec_web_network"
+      
+      # Middleware per redirect root -> www
+      - "traefik.http.middlewares.transizione5-rootToWww.redirectregex.regex=^https://${DOMAIN}/(.*)"
+      - "traefik.http.middlewares.transizione5-rootToWww.redirectregex.replacement=https://www.${DOMAIN}/$${1}"
+      
+      # Router per redirect root
+      - "traefik.http.routers.transizione5-root-redirect.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.transizione5-root-redirect.middlewares=transizione5-rootToWww"
+      - "traefik.http.routers.transizione5-root-redirect.entrypoints=websecure"
+      - "traefik.http.routers.transizione5-root-redirect.tls.certResolver=letsencrypt"
+      
+      # Router principale per www
+      - "traefik.http.routers.transizione5-frontend.rule=Host(`www.${DOMAIN}`)"
+      - "traefik.http.routers.transizione5-frontend.entrypoints=websecure"
+      - "traefik.http.routers.transizione5-frontend.tls.certResolver=letsencrypt"
+      - "traefik.http.routers.transizione5-frontend.middlewares=securityHeaders"
+      - "traefik.http.services.transizione5-frontend.loadbalancer.server.port=3000"
+
+  cheshire-cat:
+    image: ghcr.io/cheshire-cat-ai/core:latest
+    container_name: cheshire_cat_core
+    restart: unless-stopped
+    ports:
+      - "${TAILSCALE_IP}:1865:80"
+      - "127.0.0.1:5678:5678"
+    volumes:
+      - ./cheshire-cat/static:/app/cat/static
+      - ./cheshire-cat/plugins:/app/cat/plugins
+      - ./cheshire-cat/data:/app/cat/data
+      - ./shared/documents:/app/cat/shared
+    networks:
+      - transizione5_network
+      - diratec_web_network  # Rete condivisa con Traefik
+    deploy:
+      resources:
+        limits:
+          cpus: "${CCAT_CPU_LIMIT}"
+          memory: "${CCAT_MEMORY_LIMIT}"
+    environment:
+      - CCAT_JWT_SECRET=${CCAT_JWT_SECRET}
+      - CCAT_API_KEY=${CCAT_API_KEY}
+      - CCAT_API_KEY_WS=${CCAT_API_KEY_WS}
+      - CORS_ORIGINS=${CORS_ORIGINS}
+      - CCAT_DEBUG=${CCAT_DEBUG}
+      - CCAT_LOG_LEVEL=${CCAT_LOG_LEVEL}
+      - POSTGRES_HOST=${POSTGRES_HOST}
+      - POSTGRES_PORT=${POSTGRES_PORT}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - CCAT_CORE_HOST=api.${DOMAIN}
+      - CCAT_CORE_USE_SECURE_PROTOCOLS=${CCAT_CORE_USE_SECURE_PROTOCOLS}
+      - CCAT_HTTPS_PROXY_MODE=${CCAT_HTTPS_PROXY_MODE}
+      - MATHPIX_APP_ID=${MATHPIX_APP_ID}
+      - MATHPIX_APP_KEY=${MATHPIX_APP_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_EMBEDDING_API_KEY=${OPENAI_EMBEDDING_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=diratec_web_network"
+      
+      # Router API (blocca /admin)
+      - "traefik.http.routers.transizione5-cheshire.rule=Host(`api.${DOMAIN}`) && !PathPrefix(`/admin`)"
+      - "traefik.http.routers.transizione5-cheshire.entrypoints=websecure"
+      - "traefik.http.routers.transizione5-cheshire.tls.certResolver=letsencrypt"
+      - "traefik.http.routers.transizione5-cheshire.middlewares=securityHeaders"
+      - "traefik.http.services.transizione5-cheshire.loadbalancer.server.port=80"
+      
+      # WebSocket endpoints
+      - "traefik.http.routers.transizione5-cheshire-ws.rule=Host(`api.${DOMAIN}`) && PathPrefix(`/ws`)"
+      - "traefik.http.routers.transizione5-cheshire-ws.entrypoints=websecure"
+      - "traefik.http.routers.transizione5-cheshire-ws.tls.certResolver=letsencrypt"
+      - "traefik.http.routers.transizione5-cheshire-ws.service=transizione5-cheshire"
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: transizione5_postgres
+    restart: unless-stopped
+    ports:
+      - "100.71.218.69:5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./postgres/init-scripts:/docker-entrypoint-initdb.d
+    command: postgres ${POSTGRES_TUNING_PARAMS}
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    networks:
+      - transizione5_network
+    deploy:
+      resources:
+        limits:
+          cpus: "${POSTGRES_CPU_LIMIT}"
+          memory: "${POSTGRES_MEMORY_LIMIT}"
+    labels:
+      - "traefik.enable=false"
+
+networks:
+  transizione5_network:
+    driver: bridge
+    name: ${NETWORK_NAME}
+  diratec_web_network:
+    external: true
+    name: diratec_web_network
+
+volumes:
+  postgres_data:
+    name: ${POSTGRES_VOLUME_NAME}
+  frontend_node_modules:
+    name: transizione5_frontend_node_modules

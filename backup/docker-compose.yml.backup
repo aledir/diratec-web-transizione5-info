@@ -1,0 +1,156 @@
+services:
+  traefik:
+    image: traefik:v2.9
+    container_name: transizione5_traefik
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik/acme:/acme
+    networks:
+      - transizione5_network
+    command:
+      # Configurazione precedentemente in traefik.yml
+      - "--api.dashboard=false"  # Disabilita completamente la dashboard
+      - "--api.debug=false"      # Disabilita anche il debug API
+      - "--log.level=INFO"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedByDefault=false"
+      - "--providers.docker.watch=true"
+      # Certificato ACME/Let's Encrypt
+      - "--certificatesresolvers.letsencrypt.acme.email=info@diratec.it"
+      - "--certificatesresolvers.letsencrypt.acme.storage=/acme/acme.json"
+      - "--certificatesresolvers.letsencrypt.acme.tlschallenge=true"
+    labels:
+      - "traefik.enable=true"
+      # Rimuovi tutte le configurazioni della dashboard
+      # Mantieni solo i middlewares necessari per gli altri servizi
+
+      # Security Headers
+      - "traefik.http.middlewares.securityHeaders.headers.browserXssFilter=true"
+      - "traefik.http.middlewares.securityHeaders.headers.contentTypeNosniff=true"
+      - "traefik.http.middlewares.securityHeaders.headers.referrerPolicy=same-origin"
+      - "traefik.http.middlewares.securityHeaders.headers.stsSeconds=31536000"
+      - "traefik.http.middlewares.securityHeaders.headers.stsIncludeSubdomains=true"
+      - "traefik.http.middlewares.securityHeaders.headers.stsPreload=true"
+      - "traefik.http.middlewares.securityHeaders.headers.customResponseHeaders.X-Robots-Tag=noindex,nofollow,nosnippet,noarchive,notranslate,noimageindex"
+      - "traefik.http.middlewares.securityHeaders.headers.customResponseHeaders.Server="
+
+      # WebSocket Headers
+      - "traefik.http.middlewares.websocket-headers.headers.customRequestHeaders.X-Forwarded-Proto=https"
+      - "traefik.http.middlewares.websocket-headers.headers.customRequestHeaders.X-Scheme=https"
+      - "traefik.http.middlewares.websocket-headers.headers.customResponseHeaders.Strict-Transport-Security=max-age=31536000; includeSubDomains"
+
+      # Root to WWW redirect
+      - "traefik.http.middlewares.rootToWww.redirectregex.regex=^https://transizione5\\.info/(.*)"
+      - "traefik.http.middlewares.rootToWww.redirectregex.replacement=https://www.transizione5.info/$${1}"
+
+      # HTTPS redirect
+      - "traefik.http.middlewares.https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.https-redirect.redirectscheme.permanent=true"
+
+      # Router per reindirizzare il dominio root a www
+      - "traefik.http.routers.root-redirect.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.root-redirect.middlewares=rootToWww"
+      - "traefik.http.routers.root-redirect.entrypoints=websecure"
+      - "traefik.http.routers.root-redirect.tls.certResolver=letsencrypt"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: transizione5_frontend
+    restart: unless-stopped
+    # Aggiunte per Hot Reload
+    command: npm run dev
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_CHESHIRE_CAT_URL=https://api.${DOMAIN}
+      - NEXT_PUBLIC_WEBSOCKET_URL=wss://api.${DOMAIN}/ws
+    networks:
+      - transizione5_network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.frontend.rule=Host(`www.${DOMAIN}`)"
+      - "traefik.http.routers.frontend.entrypoints=websecure"
+      - "traefik.http.routers.frontend.tls.certResolver=letsencrypt"
+      - "traefik.http.routers.frontend.middlewares=securityHeaders"
+      - "traefik.http.services.frontend.loadbalancer.server.port=3000"
+
+  cheshire-cat:
+    image: ghcr.io/cheshire-cat-ai/core:latest
+    container_name: cheshire_cat_core
+    restart: unless-stopped
+    volumes:
+      - ./cheshire-cat/static:/app/cat/static
+      - ./cheshire-cat/plugins:/app/cat/plugins
+      - ./cheshire-cat/data:/app/cat/data
+      - ./shared/documents:/app/cat/shared/documents
+    networks:
+      - transizione5_network
+    environment:
+      - AUTH_ENABLED=true
+      - AUTH_SECRET_KEY=${AUTH_SECRET_KEY}
+      - CCAT_JWT_SECRET=${CCAT_JWT_SECRET}
+      - CCAT_API_KEY=${CCAT_API_KEY}
+      - CCAT_API_KEY_WS=${CCAT_API_KEY_WS}
+      - CORS_ORIGINS=https://${DOMAIN},https://www.${DOMAIN},https://api.${DOMAIN}
+      - DEBUG_MODE=${DEV_MODE:-false}
+      - POSTGRES_HOST=${POSTGRES_HOST:-postgres}
+      - POSTGRES_PORT=${POSTGRES_PORT:-5432}
+      - POSTGRES_DB=${POSTGRES_DB:-diratec_leads}
+      - POSTGRES_USER=${POSTGRES_USER:-diratec_user}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-securepassword}
+      # Configurazioni HTTPS per Cheshire Cat
+      - CCAT_CORE_HOST=api.${DOMAIN}
+      - CCAT_CORE_USE_SECURE_PROTOCOLS=true
+      - CCAT_HTTPS_PROXY_MODE=true
+      # Configurazione Mathpix
+      - MATHPIX_APP_ID=${MATHPIX_APP_ID}
+      - MATHPIX_APP_KEY=${MATHPIX_APP_KEY}
+      # Configurazione OpenAI
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    labels:
+      - "traefik.enable=true"
+      # HTTP API endpoints
+      - "traefik.http.routers.cheshire.rule=Host(`api.${DOMAIN}`)"
+      - "traefik.http.routers.cheshire.entrypoints=websecure"
+      - "traefik.http.routers.cheshire.tls.certResolver=letsencrypt"
+      - "traefik.http.routers.cheshire.middlewares=securityHeaders"
+      - "traefik.http.services.cheshire.loadbalancer.server.port=80"
+      # WebSocket endpoints
+      - "traefik.http.routers.cheshire-ws.rule=Host(`api.${DOMAIN}`) && PathPrefix(`/ws`)"
+      - "traefik.http.routers.cheshire-ws.entrypoints=websecure"
+      - "traefik.http.routers.cheshire-ws.tls.certResolver=letsencrypt"
+      - "traefik.http.routers.cheshire-ws.middlewares=websocket-headers"
+      - "traefik.http.routers.cheshire-ws.service=cheshire"
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: transizione5_postgres
+    restart: unless-stopped
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./postgres/init-scripts:/docker-entrypoint-initdb.d
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB:-diratec_leads}
+      - POSTGRES_USER=${POSTGRES_USER:-diratec_user}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    networks:
+      - transizione5_network
+    labels:
+      - "traefik.enable=false"
+
+networks:
+  transizione5_network:
+    driver: bridge
+
+volumes:
+  postgres_data:

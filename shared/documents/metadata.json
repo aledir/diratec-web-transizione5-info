@@ -1,0 +1,917 @@
+{
+  "files": [
+    {
+      "id": "articolo-38-dl-19-2024",
+      "path": "normativa/2024-03-02_Articolo_38_DL_19_[Istituzione_Piano_Transizione_5_0].pdf",
+      "titolo": "Articolo 38 DL 19/2024 - Istituzione Piano Transizione 5.0",
+      "categoria": "NORMATIVA SERVIZI",
+      "tipo": "NORMATIVA",
+      "data": "2024-03-02",
+      "stato": "attivo",
+      "converti_cag": true,
+      "descrizione": "Articolo 38 del Decreto Legge 19/2024 che istituisce il Piano Transizione 5.0",
+      "tags": [
+        "decreto legge",
+        "articolo 38",
+        "istituzione",
+        "piano",
+        "transizione 5.0"
+      ],
+      "chunk_size": 1000,
+      "chunk_overlap": 200,
+      "priorita_rag": 5,
+      "visibile_frontend": true,
+      "markdown_path": "markdown/2024-03-02_Articolo_38_DL_19_[Istituzione_Piano_Transizione_5_0].md",
+      "clean_options": {
+        "taglia_caratteri_inizio": 3058,
+        "taglia_caratteri_fine": 5422
+      }
+    },
+    {
+      "id": "decreto-attuativo-luglio-2024",
+      "path": "normativa/2024-07-24_Decreto_Attuativo_[Transizione_5_0].pdf",
+      "titolo": "Decreto attuativo 24 luglio 2024",
+      "categoria": "NORMATIVA SERVIZI",
+      "tipo": "NORMATIVA",
+      "data": "2024-07-24",
+      "stato": "attivo",
+      "converti_cag": true,
+      "descrizione": "Decreto attuativo che definisce le modalit\u00e0 operative della Transizione 5.0",
+      "tags": [
+        "decreto attuativo",
+        "modalit\u00e0 operative",
+        "transizione 5.0"
+      ],
+      "chunk_size": 1500,
+      "chunk_overlap": 300,
+      "priorita_rag": 4,
+      "visibile_frontend": true,
+      "markdown_path": "markdown/2024-07-24_Decreto_Attuativo_[Transizione_5_0].md",
+      "clean_options": {
+        "taglia_caratteri_inizio": 561,
+        "taglia_caratteri_fine": 2
+      }
+    },
+    {
+      "id": "decreto-direttoriale-agosto-2024",
+      "path": "normativa/2024-08-06_Decreto_Direttoriale_[Apertura_Piattaforma].pdf",
+      "titolo": "Decreto Direttoriale 6 agosto 2024 - Apertura piattaforma",
+      "categoria": "NORMATIVA SERVIZI",
+      "tipo": "NORMATIVA",
+      "data": "2024-08-06",
+      "stato": "attivo",
+      "descrizione": "Decreto Direttoriale che stabilisce l'apertura della piattaforma per la Transizione 5.0",
+      "tags": [
+        "decreto direttoriale",
+        "piattaforma",
+        "apertura",
+        "transizione 5.0"
+      ],
+      "chunk_size": 1000,
+      "chunk_overlap": 200,
+      "priorita_rag": 6,
+      "visibile_frontend": true,
+      "markdown_path": "markdown/2024-08-06_Decreto_Direttoriale_[Apertura_Piattaforma].md"
+    },
+    {
+      "id": "decreto-direttoriale-settembre-2024",
+      "path": "normativa/2024-09-11_Decreto_Direttoriale_[Funzionalita_Comunicazione_Completamento].pdf",
+      "titolo": "Decreto Direttoriale 11 settembre 2024 - Funzionalit\u00e0 comunicazione di completamento",
+      "categoria": "NORMATIVA SERVIZI",
+      "tipo": "NORMATIVA",
+      "data": "2024-09-11",
+      "stato": "attivo",
+      "descrizione": "Decreto Direttoriale sulle funzionalit\u00e0 di comunicazione completamento Transizione 5.0",
+      "tags": [
+        "decreto direttoriale",
+        "comunicazione",
+        "completamento",
+        "transizione 5.0"
+      ],
+      "chunk_size": 1000,
+      "chunk_overlap": 200,
+      "priorita_rag": 6,
+      "visibile_frontend": true
+    },
+    {
+      "id": "legge-bilancio-2025",
+      "path": "normativa/2024-12-30_Legge_Bilancio_2025_[Estratto_Transizione_5_0].pdf",
+      "titolo": "Legge di Bilancio 2025 - Estratto Transizione 5.0",
+      "categoria": "NORMATIVA SERVIZI",
+      "tipo": "NORMATIVA",
+      "data": "2024-12-30",
+      "stato": "attivo",
+      "converti_cag": true,
+      "descrizione": "Estratto della Legge di Bilancio 2025 relativo alla Transizione 5.0",
+      "tags": [
+        "legge di bilancio",
+        "2025",
+        "transizione 5.0"
+      ],
+      "chunk_size": 1000,
+      "chunk_overlap": 200,
+      "priorita_rag": 2,
+      "visibile_frontend": true,
+      "markdown_path": "markdown/2024-12-30_Legge_Bilancio_2025_[Estratto_Transizione_5_0].md",
+      "clean_options": {
+        "taglia_caratteri_inizio": 2163,
+        "taglia_caratteri_fine": 2970
+      }
+    },
+    {
+      "id": "circolare-operativa-agosto-2024",
+      "path": "circolari/2024-08-16_Circolare_Operativa_MIMIT_[Transizione_5_0].pdf",
+      "titolo": "Circolare Operativa MIMIT - 16 agosto 2024",
+      "categoria": "NORMATIVA SERVIZI",
+      "tipo": "CIRCOLARE",
+      "data": "2024-08-16",
+      "stato": "attivo",
+      "descrizione": "Circolare operativa del MIMIT con indicazioni applicative sulla Transizione 5.0",
+      "tags": [
+        "circolare",
+        "MIMIT",
+        "indicazioni operative",
+        "transizione 5.0"
+      ],
+      "chunk_size": 1500,
+      "chunk_overlap": 300,
+      "priorita_rag": 6,
+      "visibile_frontend": true
+    },
+    {
+      "id": "circolare-operativa-no-allegati-2024",
+      "path": "circolari/2024-08-16_Circolare_Operativa_MIMIT_No_Allegati[Transizione_5_0].pdf",
+      "titolo": "Circolare Operativa MIMIT (senza allegati) - 16 agosto 2024",
+      "categoria": "NORMATIVA SERVIZI",
+      "tipo": "CIRCOLARE",
+      "data": "2024-08-16",
+      "stato": "attivo",
+      "converti_cag": true,
+      "descrizione": "Circolare operativa del MIMIT con indicazioni applicative (versione senza allegati)",
+      "tags": [
+        "circolare",
+        "MIMIT",
+        "indicazioni operative",
+        "transizione 5.0"
+      ],
+      "chunk_size": 1500,
+      "chunk_overlap": 300,
+      "priorita_rag": 3,
+      "visibile_frontend": false,
+      "markdown_path": "markdown/2024-08-16_Circolare_Operativa_MIMIT_No_Allegati[Transizione_5_0].md"
+    },
+    {
+      "id": "circolare-operativa-errata-corrige-2024",
+      "path": "circolari/2024-08-19_Circolare_Operativa_MIMIT_[Errata_Corrige].pdf",
+      "titolo": "Circolare Operativa MIMIT - Errata Corrige - 19 agosto 2024",
+      "categoria": "NORMATIVA SERVIZI",
+      "tipo": "CIRCOLARE",
+      "data": "2024-08-19",
+      "stato": "attivo",
+      "converti_cag": true,
+      "descrizione": "Errata corrige della Circolare Operativa MIMIT sulla Transizione 5.0",
+      "tags": [
+        "circolare",
+        "MIMIT",
+        "errata corrige",
+        "transizione 5.0"
+      ],
+      "chunk_size": 500,
+      "chunk_overlap": 100,
+      "priorita_rag": 3,
+      "visibile_frontend": true,
+      "markdown_path": "markdown/2024-08-19_Circolare_Operativa_MIMIT_[Errata_Corrige].md"
+    },
+    {
+      "id": "faq-mimit-ottobre-2024",
+      "path": "faq/2024-10-08_FAQ_MIMIT_[Transizione_5_0].pdf",
+      "titolo": "FAQ MIMIT - 8 ottobre 2024",
+      "categoria": "PILLOLE INFORMATIVE",
+      "tipo": "FAQ",
+      "data": "2024-10-08",
+      "stato": "obsoleto",
+      "descrizione": "Domande frequenti pubblicate dal MIMIT sulla Transizione 5.0 - ottobre 2024 (versione superata)",
+      "tags": [
+        "FAQ",
+        "domande frequenti",
+        "MIMIT",
+        "transizione 5.0"
+      ],
+      "chunk_size": 1200,
+      "chunk_overlap": 250,
+      "priorita_rag": null,
+      "visibile_frontend": false
+    },
+    {
+      "id": "faq-mimit-novembre-2024",
+      "path": "faq/2024-11-02_FAQ_MIMIT_[Transizione_5_0].pdf",
+      "titolo": "FAQ MIMIT - 2 novembre 2024",
+      "categoria": "PILLOLE INFORMATIVE",
+      "tipo": "FAQ",
+      "data": "2024-11-02",
+      "stato": "obsoleto",
+      "descrizione": "Domande frequenti pubblicate dal MIMIT sulla Transizione 5.0 - novembre 2024 (versione superata)",
+      "tags": [
+        "FAQ",
+        "domande frequenti",
+        "MIMIT",
+        "transizione 5.0"
+      ],
+      "chunk_size": 1200,
+      "chunk_overlap": 250,
+      "priorita_rag": null,
+      "visibile_frontend": false
+    },
+    {
+      "id": "faq-mimit-febbraio-21-2025",
+      "path": "faq/2025-02-21_FAQ_MIMIT_[Transizione_5_0].pdf",
+      "titolo": "FAQ MIMIT - 21 febbraio 2025",
+      "categoria": "PILLOLE INFORMATIVE",
+      "tipo": "FAQ",
+      "data": "2025-02-21",
+      "stato": "obsoleto",
+      "descrizione": "Domande frequenti pubblicate dal MIMIT sulla Transizione 5.0 - febbraio 2025 (versione superata)",
+      "tags": [
+        "FAQ",
+        "domande frequenti",
+        "MIMIT",
+        "transizione 5.0"
+      ],
+      "chunk_size": 1200,
+      "chunk_overlap": 250,
+      "priorita_rag": null,
+      "visibile_frontend": false
+    },
+    {
+      "id": "faq-mimit-febbraio-24-2025",
+      "path": "faq/2025-02-24_FAQ_MIMIT_[Transizione_5_0].pdf",
+      "titolo": "FAQ MIMIT - 24 febbraio 2025",
+      "categoria": "PILLOLE INFORMATIVE",
+      "tipo": "FAQ",
+      "data": "2025-02-24",
+      "stato": "obsoleto",
+      "descrizione": "Domande frequenti pubblicate dal MIMIT sulla Transizione 5.0 - febbraio 2025 (versione superata)",
+      "tags": [
+        "FAQ",
+        "domande frequenti",
+        "MIMIT",
+        "transizione 5.0"
+      ],
+      "chunk_size": 1200,
+      "chunk_overlap": 250,
+      "priorita_rag": null,
+      "visibile_frontend": false
+    },
+    {
+      "id": "faq-mimit-aprile-2025",
+      "path": "faq/2025-04-10_FAQ_MIMIT_[Transizione_5_0].pdf",
+      "titolo": "FAQ MIMIT - 10 aprile 2025",
+      "categoria": "PILLOLE INFORMATIVE",
+      "tipo": "FAQ",
+      "data": "2025-04-10",
+      "stato": "attivo",
+      "converti_cag": true,
+      "descrizione": "Versione aggiornata e attualmente in vigore delle FAQ sulla Transizione 5.0",
+      "tags": [
+        "FAQ",
+        "domande frequenti",
+        "MIMIT",
+        "transizione 5.0"
+      ],
+      "chunk_size": 1200,
+      "chunk_overlap": 250,
+      "priorita_rag": 1,
+      "visibile_frontend": true,
+      "markdown_path": "markdown/2025-04-10_FAQ_MIMIT_[Transizione_5_0].md"
+    },
+    {
+      "id": "guida-portale-gse",
+      "path": "guide/2024-10-15_Guida_Portale_GSE_[TR5].pdf",
+      "titolo": "Guida al portale GSE Transizione 5.0",
+      "categoria": "GUIDE",
+      "tipo": "GUIDA",
+      "data": "2024-10-15",
+      "stato": "attivo",
+      "descrizione": "Guida ufficiale per l'utilizzo del portale GSE Transizione 5.0",
+      "tags": [
+        "guida",
+        "portale",
+        "GSE",
+        "TR5",
+        "transizione 5.0"
+      ],
+      "chunk_size": 1000,
+      "chunk_overlap": 200,
+      "priorita_rag": 7,
+      "visibile_frontend": true
+    },
+    {
+      "id": "istruzioni-operative-portale-gse",
+      "path": "guide/2024-10-15_Istruzioni_Operative_Portale_GSE_[TR5].pdf",
+      "titolo": "Istruzioni operative portale GSE Transizione 5.0",
+      "categoria": "GUIDE",
+      "tipo": "GUIDA",
+      "data": "2024-10-15",
+      "stato": "attivo",
+      "descrizione": "Istruzioni operative dettagliate per l'utilizzo del portale GSE",
+      "tags": [
+        "istruzioni",
+        "operative",
+        "portale",
+        "GSE",
+        "TR5"
+      ],
+      "chunk_size": 1000,
+      "chunk_overlap": 200,
+      "priorita_rag": 7,
+      "visibile_frontend": true
+    },
+    {
+      "id": "portale-mimit-piano-transizione",
+      "path": "guide/2025-04-14_Portale_MIMIT_[Piano_Transizione_5_0].pdf",
+      "titolo": "Portale MIMIT - Piano Transizione 5.0",
+      "categoria": "GUIDE",
+      "tipo": "GUIDA",
+      "data": "2025-04-14",
+      "stato": "attivo",
+      "descrizione": "Informazioni relative al Piano Transizione 5.0 sul portale MIMIT",
+      "tags": [
+        "MIMIT",
+        "portale",
+        "piano",
+        "transizione 5.0"
+      ],
+      "chunk_size": 1000,
+      "chunk_overlap": 200,
+      "priorita_rag": 7,
+      "visibile_frontend": true
+    },
+    {
+      "id": "gse1-intro",
+      "path": "guide/2025-05-06_GSE1_Intro_[Cose_Come_Funziona].pdf",
+      "titolo": "GSE - Transizione 5.0: cos'\u00e8 e come funziona",
+      "categoria": "GUIDE",
+      "tipo": "GUIDA",
+      "data": "2025-05-06",
+      "stato": "attivo",
+      "descrizione": "Introduzione alla Transizione 5.0: cos'\u00e8 e come funziona",
+      "tags": [
+        "GSE",
+        "introduzione",
+        "funzionamento",
+        "transizione 5.0"
+      ],
+      "chunk_size": 1000,
+      "chunk_overlap": 200,
+      "priorita_rag": 7,
+      "visibile_frontend": true
+    },
+    {
+      "id": "gse2-requisiti",
+      "path": "guide/2025-05-06_GSE2_Requisiti_[Chi_Puo_Aderire].pdf",
+      "titolo": "GSE - Transizione 5.0: requisiti e chi pu\u00f2 aderire",
+      "categoria": "GUIDE",
+      "tipo": "GUIDA",
+      "data": "2025-05-06",
+      "stato": "attivo",
+      "descrizione": "Requisiti per l'adesione alla Transizione 5.0 e soggetti ammissibili",
+      "tags": [
+        "GSE",
+        "requisiti",
+        "soggetti ammissibili",
+        "transizione 5.0"
+      ],
+      "chunk_size": 1000,
+      "chunk_overlap": 200,
+      "priorita_rag": 7,
+      "visibile_frontend": true
+    },
+    {
+      "id": "gse3-credito-imposta",
+      "path": "guide/2025-05-06_GSE3_Credito_Imposta_[Transizione_5_0].pdf",
+      "titolo": "GSE - Credito d'Imposta per la Transizione 5.0",
+      "categoria": "GUIDE",
+      "tipo": "GUIDA",
+      "data": "2025-05-06",
+      "stato": "attivo",
+      "descrizione": "Informazioni sul credito d'imposta previsto per la Transizione 5.0",
+      "tags": [
+        "GSE",
+        "credito d'imposta",
+        "agevolazioni",
+        "transizione 5.0"
+      ],
+      "chunk_size": 1000,
+      "chunk_overlap": 200,
+      "priorita_rag": 7,
+      "visibile_frontend": true
+    },
+    {
+      "id": "gse4-linee-guida",
+      "path": "guide/2025-05-06_GSE4_Linee_Guida_[Come_Accedere].pdf",
+      "titolo": "GSE - Linee Guida Transizione 5.0: come accedere",
+      "categoria": "GUIDE",
+      "tipo": "GUIDA",
+      "data": "2025-05-06",
+      "stato": "attivo",
+      "descrizione": "Linee guida per l'accesso alle agevolazioni della Transizione 5.0",
+      "tags": [
+        "GSE",
+        "linee guida",
+        "accesso",
+        "transizione 5.0"
+      ],
+      "chunk_size": 1000,
+      "chunk_overlap": 200,
+      "priorita_rag": 7,
+      "visibile_frontend": true
+    },
+    {
+      "id": "gse5-faq",
+      "path": "guide/2025-05-06_GSE5_FAQ_[Quesiti].pdf",
+      "titolo": "GSE - Transizione 5.0: FAQ e quesiti",
+      "categoria": "GUIDE",
+      "tipo": "GUIDA",
+      "data": "2025-05-06",
+      "stato": "attivo",
+      "descrizione": "FAQ e quesiti frequenti sulla Transizione 5.0 pubblicati dal GSE",
+      "tags": [
+        "GSE",
+        "FAQ",
+        "quesiti",
+        "transizione 5.0"
+      ],
+      "chunk_size": 1000,
+      "chunk_overlap": 200,
+      "priorita_rag": 7,
+      "visibile_frontend": true
+    },
+    {
+      "id": "gse6-documenti",
+      "path": "guide/2025-05-06_GSE6_Documenti_[Elenco].pdf",
+      "titolo": "GSE - Documenti Transizione 5.0",
+      "categoria": "GUIDE",
+      "tipo": "GUIDA",
+      "data": "2025-05-06",
+      "stato": "attivo",
+      "descrizione": "Elenco dei documenti relativi alla Transizione 5.0",
+      "tags": [
+        "GSE",
+        "documenti",
+        "elenco",
+        "transizione 5.0"
+      ],
+      "chunk_size": 1000,
+      "chunk_overlap": 200,
+      "priorita_rag": 7,
+      "visibile_frontend": true
+    },
+    {
+      "id": "priorita-aggiornamenti-critici",
+      "path": "guide/2025-05-10_Priorita_Aggiornamenti_Critici.txt",
+      "titolo": "Priorit\u00e0 e Aggiornamenti Critici Transizione 5.0",
+      "categoria": "GUIDE",
+      "tipo": "GUIDA",
+      "data": "2025-05-10",
+      "stato": "attivo",
+      "descrizione": "Documento di priorit\u00e0 e aggiornamenti critici per la Transizione 5.0",
+      "tags": [
+        "priorit\u00e0",
+        "aggiornamenti",
+        "transizione 5.0"
+      ],
+      "chunk_size": 800,
+      "chunk_overlap": 150,
+      "priorita_rag": 1,
+      "visibile_frontend": true
+    },
+    {
+      "id": "allegato-i-delega",
+      "path": "modelli/2024-08-07_Allegato_I_[Delega_Invio_Comunicazioni].pdf",
+      "titolo": "Allegato I - Delega per l'invio delle comunicazioni",
+      "categoria": "MODULI E MODELLI",
+      "tipo": "MODELLO",
+      "data": "2024-08-07",
+      "stato": "attivo",
+      "descrizione": "Modello di delega per l'invio delle comunicazioni relative alla Transizione 5.0",
+      "tags": [
+        "allegato",
+        "delega",
+        "comunicazioni",
+        "modello"
+      ],
+      "chunk_size": 800,
+      "chunk_overlap": 150,
+      "priorita_rag": 8,
+      "visibile_frontend": true
+    },
+    {
+      "id": "allegato-ii-dichiarazione",
+      "path": "modelli/2024-08-19_Allegato_II_[Dichiarazione_Titolare_Effettivo].pdf",
+      "titolo": "Allegato II - Dichiarazione dati titolare effettivo",
+      "categoria": "MODULI E MODELLI",
+      "tipo": "MODELLO",
+      "data": "2024-08-19",
+      "stato": "attivo",
+      "descrizione": "Dichiarazione dei dati del titolare effettivo per la Transizione 5.0",
+      "tags": [
+        "allegato",
+        "dichiarazione",
+        "titolare effettivo",
+        "modello"
+      ],
+      "chunk_size": 800,
+      "chunk_overlap": 150,
+      "priorita_rag": 8,
+      "visibile_frontend": true
+    },
+    {
+      "id": "allegato-iii-terzieta",
+      "path": "modelli/2024-08-07_Allegato_III_[Dichiarazione_Terzieta_Valutatore].pdf",
+      "titolo": "Allegato III - Dichiarazione di terziet\u00e0 del valutatore indipendente",
+      "categoria": "MODULI E MODELLI",
+      "tipo": "MODELLO",
+      "data": "2024-08-07",
+      "stato": "attivo",
+      "descrizione": "Dichiarazione di terziet\u00e0 del valutatore indipendente per la Transizione 5.0",
+      "tags": [
+        "allegato",
+        "dichiarazione",
+        "terziet\u00e0",
+        "valutatore indipendente"
+      ],
+      "chunk_size": 800,
+      "chunk_overlap": 150,
+      "priorita_rag": 8,
+      "visibile_frontend": true
+    },
+    {
+      "id": "allegato-iv-terzieta-certificatori",
+      "path": "modelli/2024-08-07_Allegato_IV_[Dichiarazione_Terzieta_Certificatori].pdf",
+      "titolo": "Allegato IV - Dichiarazione di terziet\u00e0 per certificatori contabili",
+      "categoria": "MODULI E MODELLI",
+      "tipo": "MODELLO",
+      "data": "2024-08-07",
+      "stato": "attivo",
+      "descrizione": "Dichiarazione di terziet\u00e0 per certificatori contabili per la Transizione 5.0",
+      "tags": [
+        "allegato",
+        "dichiarazione",
+        "terziet\u00e0",
+        "certificatori contabili"
+      ],
+      "chunk_size": 800,
+      "chunk_overlap": 150,
+      "priorita_rag": 8,
+      "visibile_frontend": true
+    },
+    {
+      "id": "allegato-v-attestazione",
+      "path": "modelli/2024-08-07_Allegato_V_[Attestazione_Possesso_Perizia].pdf",
+      "titolo": "Allegato V - Attestazione di possesso della Perizia tecnica e della Certificazione contabile",
+      "categoria": "MODULI E MODELLI",
+      "tipo": "MODELLO",
+      "data": "2024-08-07",
+      "stato": "attivo",
+      "descrizione": "Attestazione di possesso della perizia tecnica e della certificazione contabile",
+      "tags": [
+        "allegato",
+        "attestazione",
+        "perizia",
+        "certificazione contabile"
+      ],
+      "chunk_size": 800,
+      "chunk_overlap": 150,
+      "priorita_rag": 8,
+      "visibile_frontend": true
+    },
+    {
+      "id": "allegato-vi-perizia-gruppo-i",
+      "path": "modelli/2024-08-07_Allegato_VI_[Perizia_Asseverata_Gruppo_I].pdf",
+      "titolo": "Allegato VI - Modello di perizia asseverata - Gruppo I",
+      "categoria": "MODULI E MODELLI",
+      "tipo": "MODELLO",
+      "data": "2024-08-07",
+      "stato": "attivo",
+      "descrizione": "Modello di perizia asseverata per il Gruppo I della Transizione 5.0",
+      "tags": [
+        "allegato",
+        "perizia asseverata",
+        "gruppo I",
+        "modello"
+      ],
+      "chunk_size": 800,
+      "chunk_overlap": 150,
+      "priorita_rag": 8,
+      "visibile_frontend": true
+    },
+    {
+      "id": "allegato-vi-perizia-gruppo-ii-iii",
+      "path": "modelli/2024-08-07_Allegato_VI_[Perizia_Asseverata_Gruppo_II_III].pdf",
+      "titolo": "Allegato VI - Modello di perizia asseverata - Gruppi II e III",
+      "categoria": "MODULI E MODELLI",
+      "tipo": "MODELLO",
+      "data": "2024-08-07",
+      "stato": "attivo",
+      "descrizione": "Modello di perizia asseverata per i Gruppi II e III della Transizione 5.0",
+      "tags": [
+        "allegato",
+        "perizia asseverata",
+        "gruppi II e III",
+        "modello"
+      ],
+      "chunk_size": 800,
+      "chunk_overlap": 150,
+      "priorita_rag": 8,
+      "visibile_frontend": true
+    },
+    {
+      "id": "allegato-vi-attestazione-conformita-i",
+      "path": "modelli/2025-04-12_Allegato_VI_[Attestazione_Conformita_Gruppo_I].pdf",
+      "titolo": "Allegato VI - Modello Attestazione di conformit\u00e0 - Gruppo I",
+      "categoria": "MODULI E MODELLI",
+      "tipo": "MODELLO",
+      "data": "2025-04-12",
+      "stato": "attivo",
+      "descrizione": "Modello di attestazione di conformit\u00e0 per il Gruppo I della Transizione 5.0",
+      "tags": [
+        "allegato",
+        "attestazione",
+        "conformit\u00e0",
+        "gruppo I",
+        "modello"
+      ],
+      "chunk_size": 800,
+      "chunk_overlap": 150,
+      "priorita_rag": 8,
+      "visibile_frontend": true
+    },
+    {
+      "id": "allegato-vi-attestazione-conformita-ii-iii",
+      "path": "modelli/2025-04-12_Allegato_VI_[Attestazione_Conformita_Gruppo_II_III].pdf",
+      "titolo": "Allegato VI - Modello di attestazione di conformit\u00e0 - Gruppi II e III",
+      "categoria": "MODULI E MODELLI",
+      "tipo": "MODELLO",
+      "data": "2025-04-12",
+      "stato": "attivo",
+      "descrizione": "Modello di attestazione di conformit\u00e0 per i Gruppi II e III della Transizione 5.0",
+      "tags": [
+        "allegato",
+        "attestazione",
+        "conformit\u00e0",
+        "gruppi II e III",
+        "modello"
+      ],
+      "chunk_size": 800,
+      "chunk_overlap": 150,
+      "priorita_rag": 8,
+      "visibile_frontend": true
+    },
+    {
+      "id": "allegato-vii-schede-dnsh",
+      "path": "modelli/2024-08-07_Allegato_VII_[Schede_DNSH].pdf",
+      "titolo": "Allegato VII - Schede tecniche DNSH",
+      "categoria": "MODULI E MODELLI",
+      "tipo": "MODELLO",
+      "data": "2024-08-07",
+      "stato": "attivo",
+      "descrizione": "Schede tecniche DNSH (Do No Significant Harm) per la Transizione 5.0",
+      "tags": [
+        "allegato",
+        "schede tecniche",
+        "DNSH",
+        "modello"
+      ],
+      "chunk_size": 800,
+      "chunk_overlap": 150,
+      "priorita_rag": 8,
+      "visibile_frontend": true
+    },
+    {
+      "id": "allegato-viii-certificazione-ex-ante",
+      "path": "modelli/2024-08-07_Allegato_VIII_[Certificazione_Ex_Ante].pdf",
+      "titolo": "Allegato VIII - Certificazione ex ante",
+      "categoria": "MODULI E MODELLI",
+      "tipo": "MODELLO",
+      "data": "2024-08-07",
+      "stato": "attivo",
+      "descrizione": "Modello di certificazione ex ante per la Transizione 5.0",
+      "tags": [
+        "allegato",
+        "certificazione",
+        "ex ante",
+        "modello"
+      ],
+      "chunk_size": 800,
+      "chunk_overlap": 150,
+      "priorita_rag": 8,
+      "visibile_frontend": true
+    },
+    {
+      "id": "allegato-ix-relazione-ex-ante",
+      "path": "modelli/2024-08-07_Allegato_IX_[Relazione_Tecnica_Ex_Ante].pdf",
+      "titolo": "Allegato IX - Relazione Tecnica di Certificazione ex ante",
+      "categoria": "MODULI E MODELLI",
+      "tipo": "MODELLO",
+      "data": "2024-08-07",
+      "stato": "attivo",
+      "descrizione": "Modello di relazione tecnica per la certificazione ex ante",
+      "tags": [
+        "allegato",
+        "relazione tecnica",
+        "certificazione ex ante",
+        "modello"
+      ],
+      "chunk_size": 800,
+      "chunk_overlap": 150,
+      "priorita_rag": 8,
+      "visibile_frontend": true
+    },
+    {
+      "id": "allegato-x-certificazione-ex-post",
+      "path": "modelli/2024-08-07_Allegato_X_[Certificazione_Ex_Post].pdf",
+      "titolo": "Allegato X - Certificazione ex post",
+      "categoria": "MODULI E MODELLI",
+      "tipo": "MODELLO",
+      "data": "2024-08-07",
+      "stato": "attivo",
+      "descrizione": "Modello di certificazione ex post per la Transizione 5.0",
+      "tags": [
+        "allegato",
+        "certificazione",
+        "ex post",
+        "modello"
+      ],
+      "chunk_size": 800,
+      "chunk_overlap": 150,
+      "priorita_rag": 8,
+      "visibile_frontend": true
+    },
+    {
+      "id": "allegato-xi-relazione-ex-post",
+      "path": "modelli/2024-08-07_Allegato_XI_[Relazione_Tecnica_Ex_Post].pdf",
+      "titolo": "Allegato XI - Relazione Tecnica di Certificazione ex post",
+      "categoria": "MODULI E MODELLI",
+      "tipo": "MODELLO",
+      "data": "2024-08-07",
+      "stato": "attivo",
+      "descrizione": "Modello di relazione tecnica per la certificazione ex post",
+      "tags": [
+        "allegato",
+        "relazione tecnica",
+        "certificazione ex post",
+        "modello"
+      ],
+      "chunk_size": 800,
+      "chunk_overlap": 150,
+      "priorita_rag": 8,
+      "visibile_frontend": true
+    },
+    {
+      "id": "allegato-xii-dsan-preventiva",
+      "path": "modelli/2024-08-07_Allegato_XII_[DSAN_Comunicazione_Preventiva].pdf",
+      "titolo": "Allegato XII - DSAN Comunicazione preventiva",
+      "categoria": "MODULI E MODELLI",
+      "tipo": "MODELLO",
+      "data": "2024-08-07",
+      "stato": "attivo",
+      "descrizione": "Dichiarazione sostitutiva dell'atto di notoriet\u00e0 per comunicazione preventiva",
+      "tags": [
+        "allegato",
+        "DSAN",
+        "comunicazione preventiva",
+        "modello"
+      ],
+      "chunk_size": 800,
+      "chunk_overlap": 150,
+      "priorita_rag": 8,
+      "visibile_frontend": true
+    },
+    {
+      "id": "allegato-xiii-dsan-avanzamento",
+      "path": "modelli/2024-08-19_Allegato_XIII_[DSAN_Avanzamento_Progetto].pdf",
+      "titolo": "Allegato XIII - DSAN Comunicazione di avanzamento del progetto",
+      "categoria": "MODULI E MODELLI",
+      "tipo": "MODELLO",
+      "data": "2024-08-19",
+      "stato": "attivo",
+      "descrizione": "Dichiarazione sostitutiva dell'atto di notoriet\u00e0 per comunicazione di avanzamento",
+      "tags": [
+        "allegato",
+        "DSAN",
+        "avanzamento progetto",
+        "modello"
+      ],
+      "chunk_size": 800,
+      "chunk_overlap": 150,
+      "priorita_rag": 8,
+      "visibile_frontend": true
+    },
+    {
+      "id": "allegato-xiv-dsan-completamento",
+      "path": "modelli/2024-08-19_Allegato_XIV_[DSAN_Comunicazione_Completamento].pdf",
+      "titolo": "Allegato XIV - DSAN Comunicazione di completamento",
+      "categoria": "MODULI E MODELLI",
+      "tipo": "MODELLO",
+      "data": "2024-08-19",
+      "stato": "attivo",
+      "descrizione": "Dichiarazione sostitutiva dell'atto di notoriet\u00e0 per comunicazione di completamento",
+      "tags": [
+        "allegato",
+        "DSAN",
+        "completamento",
+        "modello"
+      ],
+      "chunk_size": 800,
+      "chunk_overlap": 150,
+      "priorita_rag": 8,
+      "visibile_frontend": true
+    },
+    {
+      "id": "autocertificazione-moduli-fotovoltaici",
+      "path": "modelli/2025-04-28_Autocertificazione_Moduli_Fotovoltaici_[Registro_ENEA].pdf",
+      "titolo": "Autocertificazione Moduli Fotovoltaici - Registro ENEA",
+      "categoria": "MODULI E MODELLI",
+      "tipo": "MODELLO",
+      "data": "2025-04-28",
+      "stato": "attivo",
+      "descrizione": "Autocertificazione per i moduli fotovoltaici da presentare al Registro ENEA",
+      "tags": [
+        "autocertificazione",
+        "moduli fotovoltaici",
+        "registro ENEA",
+        "modello"
+      ],
+      "chunk_size": 800,
+      "chunk_overlap": 150,
+      "priorita_rag": 8,
+      "visibile_frontend": true
+    },
+    {
+      "id": "circolare-4e-2017",
+      "path": "circolari/2017-03-30_Circolare_4E_ADE-MISE[Industria_4.0].pdf",
+      "titolo": "Circolare 4/E 2017 - Prerequisiti Industria 4.0 per Transizione 5.0",
+      "categoria": "NORMATIVA SERVIZI",
+      "tipo": "CIRCOLARE",
+      "data": "2017-03-30",
+      "stato": "attivo",
+      "converti_cag": true,
+      "descrizione": "Circolare di riferimento sui requisiti tecnici 4.0 necessari come prerequisito per la Transizione 5.0",
+      "tags": [
+        "prerequisiti",
+        "industria 4.0",
+        "impresa 4.0",
+        "transizione 4.0",
+        "transizione 5.0",
+        "interconnessione",
+        "beni strumentali",
+        "requisiti obbligatori"
+      ],
+      "chunk_size": 1200,
+      "chunk_overlap": 250,
+      "priorita_rag": 3,
+      "visibile_frontend": true,
+      "markdown_path": "markdown/2017-03-30_Circolare_4E_ADE-MISE[Industria_4.0].md"
+    },
+    {
+      "id": "circolare-177355-2018",
+      "path": "circolari/2018-05-23_Circolare_177355-MISE[Industria_4.0].pdf",
+      "titolo": "Circolare 177355/2018 - Chiarimenti requisiti interconnessione e beni agevolabili Industria 4.0",
+      "categoria": "NORMATIVA SERVIZI",
+      "tipo": "CIRCOLARE",
+      "data": "2018-05-23",
+      "stato": "attivo",
+      "converti_cag": true,
+      "descrizione": "Circolare con ulteriori chiarimenti sui beni agevolabili e requisiti di interconnessione per Industria 4.0, rilevante per Transizione 5.0",
+      "tags": [
+        "industria 4.0",
+        "impresa 4.0",
+        "transizione 4.0",
+        "transizione 5.0",
+        "interconnessione",
+        "beni strumentali",
+        "iper ammortamento",
+        "guida semi automatica",
+        "integrazione automatizzata"
+      ],
+      "chunk_size": 1200,
+      "chunk_overlap": 250,
+      "priorita_rag": 3,
+      "visibile_frontend": true,
+      "markdown_path": "markdown/2018-05-23_Circolare_177355-MISE[Industria_4.0].md"
+    }
+  ],
+  "categorie": [
+    "NORMATIVA SERVIZI",
+    "GUIDE",
+    "MODULI E MODELLI",
+    "PILLOLE INFORMATIVE"
+  ],
+  "tipi": [
+    "NORMATIVA",
+    "CIRCOLARE",
+    "FAQ",
+    "GUIDA",
+    "MODELLO"
+  ]
+}

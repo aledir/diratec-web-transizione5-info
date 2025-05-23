@@ -1,0 +1,9 @@
+{
+  "assistant": {
+    "id": "quinto",
+    "displayName": "Quinto",
+    "fullTitle": "Quinto - Assistente Transizione 5.0",
+    "welcomeMessage": "Ciao! Sono Quinto, l'assistente virtuale specializzato in Transizione 5.0 di DIRATEC.\n\n👋 Posso aiutarti con:\n- Informazioni sulle agevolazioni fiscali della Transizione 5.0\n- Dettagli su crediti d'imposta e requisiti di accesso\n- Chiarimenti su investimenti ammissibili e procedure\n- Consulenza preliminare per il tuo caso specifico\n\nChiedimi ciò che ti serve per il tuo progetto di innovazione sostenibile!",
+    "description": "Assistente specializzato in Transizione 5.0"
+  }
+}

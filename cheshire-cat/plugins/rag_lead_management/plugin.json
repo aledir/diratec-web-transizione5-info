@@ -1,0 +1,11 @@
+{
+  "name": "RAG Lead Management",
+  "version": "1.0.0",
+  "author_name": "DIRATEC SRL",
+  "description": "Plugin RAG per la gestione dei lead Transizione 5.0",
+  "author_url":"https://www.diratec.com",
+  "plugin_url":"",
+  "tags": "Lead, Management, Transizione 5.0",
+  "thumb":"https://raw.githubusercontent.com/aledir/t5_ccat_logo/main/t5_lead_management_logo.png",
+  "min_cat_version": "1.9.1"
+}
