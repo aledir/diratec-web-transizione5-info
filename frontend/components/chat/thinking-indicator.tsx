@@ -1,6 +1,6 @@
-// components/Chat/ThinkingIndicator.tsx
+// components/chat/thinking-indicator.tsx - IMPORT CORRETTI
 import React, { useState, useEffect } from 'react';
-import styles from './Chat.module.css';
+import styles from './chat.module.css';
 import useSharedConfig from '../../hooks/useSharedConfig';
 
 // Icone disponibili - scegli quella che preferisci

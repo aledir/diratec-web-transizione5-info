@@ -1,9 +1,9 @@
-// frontend/components/Chat/ChatMessage.tsx
+// components/chat/chat-message.tsx
 import { useRef } from 'react';
-import TypewriterEffect from './TypewriterEffect';
+import TypewriterEffect from './typewriter-effect';
 import useSharedConfig from '../../hooks/useSharedConfig';
-import ThinkingIndicator from './ThinkingIndicator';
-import styles from './Chat.module.css';
+import ThinkingIndicator from './thinking-indicator';
+import styles from './chat.module.css'; // ✅ IMPORT CORRETTO
 
 interface Message {
   id: string;

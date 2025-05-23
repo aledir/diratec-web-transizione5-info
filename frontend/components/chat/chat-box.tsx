@@ -1,10 +1,10 @@
 // frontend/components/ChatBox.tsx
 "use client"
 import React, { useState, useRef, useEffect } from 'react';
-import ChatMessage from './Chat/ChatMessage';
-import { useAuthContext } from '../contexts/AuthContext';
-import useCheshireCat from '../hooks/useCheshireCat';
-import useSharedConfig from '../hooks/useSharedConfig';
+import ChatMessage from './chat-message';
+import { useAuthContext } from '@/contexts/AuthContext';
+import useCheshireCat from '@/hooks/useCheshireCat';
+import useSharedConfig from '@/hooks/useSharedConfig';
 
 // Definizione di tipo per l'interfaccia Message attesa da ChatMessage
 interface Message {

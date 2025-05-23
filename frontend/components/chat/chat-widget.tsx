@@ -1,14 +1,14 @@
 // frontend/components/Chat/ChatWidget.tsx
 import React, { useEffect, useState, useRef } from 'react';
-import ChatMessage from './ChatMessage';
-import ChatInput from './ChatInput';
-import LoadingIndicator from './LoadingIndicator';
-import PredefinedQuestions from './PredefinedQuestions';
-import UserSessionManager from './UserSessionManager';
+import ChatMessage from './chat-message';
+import ChatInput from './chat-input';
+import LoadingIndicator from './loading-indicator';
+import PredefinedQuestions from './predefined-questions';
+import UserSessionManager from './user-session-manager';
 import { UserSession, updateLastActivity, ConversationData, saveConversation, extractConversationTitle } from '../../utils/sessionManager';
 import useCheshireCat from '../../hooks/useCheshireCat';
 import useSharedConfig from '../../hooks/useSharedConfig';
-import styles from './Chat.module.css';
+import styles from './chat.module.css';
 
 // Implementiamo throttle direttamente in questo file per evitare problemi di importazione
 function throttle(callback: Function, limit: number = 100) {

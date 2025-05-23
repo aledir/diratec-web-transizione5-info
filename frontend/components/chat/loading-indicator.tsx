@@ -1,6 +1,6 @@
 // frontend/components/Chat/LoadingIndicator.tsx
 import React from 'react';
-import styles from './Chat.module.css';
+import styles from './chat.module.css';
 import Image from 'next/image';
 
 interface LoadingIndicatorProps {

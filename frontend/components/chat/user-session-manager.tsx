@@ -1,7 +1,7 @@
 // frontend/components/Chat/UserSessionManager.tsx
 import React, { useState, useEffect } from 'react';
 import { createOrUpdateUserSession, getCurrentUserSession, updateUsername, UserSession, clearCurrentSession } from '../../utils/sessionManager';
-import styles from './Chat.module.css';
+import styles from './chat.module.css';
 
 interface UserSessionManagerProps {
   onSessionUpdate: (session: UserSession) => void;

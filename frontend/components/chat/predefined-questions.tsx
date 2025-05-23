@@ -1,6 +1,6 @@
 // frontend/components/Chat/PredefinedQuestions.tsx
 import React, { useState } from 'react';
-import styles from './Chat.module.css';
+import styles from './chat.module.css';
 
 interface PredefinedQuestionsProps {
   questions: string[];

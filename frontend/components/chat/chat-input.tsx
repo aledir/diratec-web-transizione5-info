@@ -1,6 +1,6 @@
 // frontend/components/Chat/ChatInput.tsx
 import React, { useState } from 'react';
-import styles from './Chat.module.css';
+import styles from './chat.module.css';
 
 interface ChatInputProps {
   onSendMessage: (text: string) => void;
