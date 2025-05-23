@@ -1,111 +1,172 @@
-// components/layout/Footer.tsx
+// components/layout/footer.tsx - Versione Pulita Corretta
+"use client"
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
-interface FooterProps {
-  // Nessuna prop necessaria
-}
-
-export default function Footer({}: FooterProps) {
+export default function Footer() {
   return (
     <footer className="bg-gray-800 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          
+          {/* Colonna 1 - Transizione 5.0 e DIRATEC */}
           <div>
-            <h3 className="text-lg font-medium mb-4">DIRATEC SRL</h3>
-            <p className="text-gray-400 text-sm mb-4">
-              Specialisti in consulenza per incentivi alle imprese e crediti d'imposta per l'innovazione tecnologica e sostenibile.
-            </p>
-            <div className="text-gray-400 text-sm">
-              <p>Via Brescia 108 G/H</p>
-              <p>25018 Montichiari (BS)</p>
-              <p className="mt-2">P.IVA 04274200981</p>
-              <p>REA BS-601891</p>
+            <div className="flex items-center space-x-3 mb-4">
+              <a 
+                href="/" 
+                className="hover:opacity-80 transition-opacity"
+              >
+                <Image
+                  src="/logos/transizione5-logo.svg"
+                  alt="Transizione 5.0"
+                  width={51}
+                  height={60}
+                  className="h-12 w-auto"
+                />
+              </a>
+              <div>
+                <h3 className="text-lg font-medium text-emerald-400">Transizione 5.0</h3>
+                <div className="text-xs text-gray-400">powered by DIRATEC SRL</div>
+              </div>
+            </div>
+            
+            <div className="space-y-1">
+              <h3 className="text-lg font-medium text-white mb-3">DIRATEC S.R.L.</h3>
+              <div className="text-gray-400 text-sm space-y-1">
+                <p>Via Brescia 108 G/H – 25018 Montichiari (BS)</p>
+                <p>Cod. Fisc. Iscrizione CCIAA e P. IVA 04274200981</p>
+                <p>Numero REA: BS - 601891</p>
+                <p>Codice SDI: W7YVJK9</p>
+                <p>Capitale sociale: € 10.000,00 i.v.</p>
+              </div>
             </div>
           </div>
           
+          {/* Colonna 2 - Fonti Ufficiali */}
           <div>
-            <h3 className="text-lg font-medium mb-4">Link utili</h3>
-            <ul className="space-y-2 text-gray-400 text-sm">
+            <h3 className="text-lg font-medium mb-4">Fonti Ufficiali</h3>
+            <ul className="space-y-3 text-gray-400 text-sm">
               <li>
                 <a 
                   href="https://www.gse.it/servizi-per-te/attuazione-misure-pnrr/transizione-5-0" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-white"
+                  className="hover:text-white flex items-center group"
                 >
-                  Portale GSE
+                  <svg className="h-4 w-4 mr-2 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                  <span className="group-hover:underline">Portale GSE Ufficiale</span>
                 </a>
               </li>
               <li>
                 <a 
-                  href="https://www.mimit.gov.it/index.php/it/incentivi/transizione-5-0" 
+                  href="https://www.mimit.gov.it/it/incentivi/piano-transizione-5-0" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-white"
+                  className="hover:text-white flex items-center group"
                 >
-                  MIMIT Transizione 5.0
+                  <svg className="h-4 w-4 mr-2 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                  <span className="group-hover:underline">MIMIT - Ministero</span>
                 </a>
               </li>
-              <li><Link href="/docs" className="hover:text-white">Documenti ufficiali</Link></li>
-              <li><Link href="#faq" className="hover:text-white">Domande frequenti</Link></li>
+              <li>
+                <Link href="/docs" className="hover:text-white flex items-center group">
+                  <svg className="h-4 w-4 mr-2 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  <span className="group-hover:underline">Documenti Normativi</span>
+                </Link>
+              </li>
             </ul>
+            
+            {/* Assistente AI - Spostato qui */}
+            <div className="mt-6 pt-4 border-t border-gray-700">
+              <h4 className="text-sm font-medium text-gray-300 mb-2">Assistente AI</h4>
+              <p className="text-sm text-gray-400">
+                Assistente virtuale specializzato per la Transizione 5.0, sviluppato e offerto da DIRATEC SRL.
+              </p>
+            </div>
           </div>
           
+          {/* Colonna 3 - Contatti */}
           <div>
             <h3 className="text-lg font-medium mb-4">Contatti</h3>
-            <ul className="space-y-2 text-gray-400 text-sm">
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-gray-500 mt-0.5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <a href="mailto:info@diratec.it" className="hover:text-white">info@diratec.it</a>
+            <ul className="space-y-3 text-gray-400 text-sm">
+              <li>
+                <a href="mailto:info@diratec.it" className="hover:text-white flex items-center group">
+                  <svg className="h-4 w-4 mr-2 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span className="group-hover:underline">info@diratec.it</span>
+                </a>
               </li>
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-gray-500 mt-0.5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <a href="tel:+390308088065" className="hover:text-white">+39 030 808 8065</a>
+              <li>
+                <a href="tel:+390308088065" className="hover:text-white flex items-center group">
+                  <svg className="h-4 w-4 mr-2 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  <span className="group-hover:underline">+39 030 808 8065</span>
+                </a>
               </li>
             </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-lg font-medium mb-4">Newsletter</h3>
-            <p className="text-gray-400 text-sm mb-4">
-              Iscriviti per ricevere aggiornamenti sulla Transizione 5.0
-            </p>
-            <form className="flex">
-              <input 
-                type="email" 
-                placeholder="La tua email" 
-                className="flex-1 py-2 px-3 rounded-l-lg text-gray-900 text-sm"
-              />
-              <button 
-                type="submit"
-                className="bg-emerald-600 hover:bg-emerald-700 text-white py-2 px-4 rounded-r-lg text-sm transition duration-150 ease-in-out"
-              >
-                Iscriviti
-              </button>
-            </form>
+            
+            {/* Altri servizi - Spostato qui */}
+            <div className="mt-6 pt-4 border-t border-gray-700">
+              <h4 className="text-sm font-medium text-gray-300 mb-3">Altri nostri servizi</h4>
+              <div className="space-y-2">
+                <div>
+                  <a href="https://www.diratec.it" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 text-sm font-medium">
+                    DIRATEC - www.diratec.it
+                  </a>
+                  <p className="text-sm text-gray-500 mt-1">L'ingegneria al servizio delle imprese</p>
+                </div>
+                <div>
+                  <a href="https://www.rocket4.it" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 text-sm font-medium">
+                    ROCKET4 - www.rocket4.it
+                  </a>
+                  <p className="text-sm text-gray-500 mt-1">L'integrazione 4.0 semplice e flessibile</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         
-        <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} DIRATEC SRL. Tutti i diritti riservati.
-          </div>
-          <div className="flex space-x-4 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-white">
-              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
-              </svg>
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white">
-              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-              </svg>
-            </a>
+        {/* Footer bottom */}
+        <div className="border-t border-gray-700 mt-10 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="text-gray-400 text-sm">
+              © {new Date().getFullYear()} DIRATEC SRL. Tutti i diritti riservati.
+              <br className="md:hidden" />
+              <span className="md:ml-2">Servizio di consulenza per la Transizione 5.0</span>
+            </div>
+            <div className="flex space-x-4 text-sm">
+              <Link href="/termini-uso" className="text-gray-400 hover:text-white">
+                Termini d'Uso
+              </Link>
+              <span className="text-gray-600">•</span>
+              <Link href="/privacy-policy" className="text-gray-400 hover:text-white">
+                Privacy Policy
+              </Link>
+              <span className="text-gray-600">•</span>
+              <Link href="/cookie-policy" className="text-gray-400 hover:text-white">
+                Cookie Policy
+              </Link>
+              <span className="text-gray-600">•</span>
+              <button 
+                onClick={() => {
+                  if (typeof window !== 'undefined' && (window as any).klaro) {
+                    (window as any).klaro.show();
+                  }
+                }}
+                className="text-gray-400 hover:text-white"
+              >
+                Preferenze Cookie
+              </button>
+            </div>
           </div>
         </div>
       </div>
