@@ -1,4 +1,4 @@
-// components/layout/footer.tsx - Versione Pulita Corretta
+// components/layout/footer.tsx - Versione Corretta Completa
 "use client"
 import React from 'react';
 import Link from 'next/link';
@@ -83,7 +83,7 @@ export default function Footer() {
               </li>
             </ul>
             
-            {/* Assistente AI - Spostato qui */}
+            {/* Assistente AI */}
             <div className="mt-6 pt-4 border-t border-gray-700">
               <h4 className="text-sm font-medium text-gray-300 mb-2">Assistente AI</h4>
               <p className="text-sm text-gray-400">
@@ -114,7 +114,7 @@ export default function Footer() {
               </li>
             </ul>
             
-            {/* Altri servizi - Spostato qui */}
+            {/* Altri servizi */}
             <div className="mt-6 pt-4 border-t border-gray-700">
               <h4 className="text-sm font-medium text-gray-300 mb-3">Altri nostri servizi</h4>
               <div className="space-y-2">
@@ -135,7 +135,7 @@ export default function Footer() {
           </div>
         </div>
         
-        {/* Footer bottom */}
+        {/* Footer bottom - VERSIONE CORRETTA */}
         <div className="border-t border-gray-700 mt-10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-400 text-sm">
@@ -162,7 +162,7 @@ export default function Footer() {
                     (window as any).klaro.show();
                   }
                 }}
-                className="text-gray-400 hover:text-white"
+                className="text-gray-400 hover:text-white cursor-pointer"
               >
                 Preferenze Cookie
               </button>
