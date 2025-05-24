@@ -2,9 +2,9 @@
 "use client"
 import React, { useState, useRef, useEffect } from 'react';
 import ChatMessage from './chat-message';
-import { useAuthContext } from '@/contexts/AuthContext';
-import useCheshireCat from '@/hooks/useCheshireCat';
-import useSharedConfig from '@/hooks/useSharedConfig';
+import { useAuthContext } from '@/contexts/auth-context';
+import useCheshireCat from '@/hooks/use-cheshire-cat';
+import useSharedConfig from '@/hooks/use-shared-config';
 
 // Definizione di tipo per l'interfaccia Message attesa da ChatMessage
 interface Message {

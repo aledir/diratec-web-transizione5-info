@@ -2,10 +2,10 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { AuthProvider } from '@/contexts/AuthContext';
-import { LegalModalProvider } from '@/contexts/LegalModalContext';
-import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
-import KlaroWrapper from '@/components/analytics/KlaroWrapper';
+import { AuthProvider } from '@/contexts/auth-context';
+import { LegalModalProvider } from '@/contexts/legal-modal-context';
+import GoogleAnalytics from '@/components/analytics/google-analytics';
+import KlaroWrapper from '@/components/analytics/klaro-wrapper';
 
 const inter = Inter({ subsets: ['latin'] });
 

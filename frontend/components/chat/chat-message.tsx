@@ -1,7 +1,7 @@
 // components/chat/chat-message.tsx
 import { useRef } from 'react';
 import TypewriterEffect from './typewriter-effect';
-import useSharedConfig from '../../hooks/useSharedConfig';
+import useSharedConfig from '../../hooks/use-shared-config';
 import ThinkingIndicator from './thinking-indicator';
 import styles from './chat.module.css'; // ✅ IMPORT CORRETTO
 

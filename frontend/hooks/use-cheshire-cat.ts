@@ -1,8 +1,8 @@
 // frontend/hooks/useCheshireCat.ts
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import ChatClientWrapper, { ChatMessage } from '../utils/chatClient';
-import { useAuthContext } from '@/contexts/AuthContext';
+import ChatClientWrapper, { ChatMessage } from '../utils/chat-client';
+import { useAuthContext } from '@/contexts/auth-context';
 
 // Definizione dei tipi
 interface UseCheshireCatOptions {

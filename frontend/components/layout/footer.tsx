@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useLegalModalContext } from '@/contexts/LegalModalContext';
+import { useLegalModalContext } from '@/contexts/legal-modal-context';
 
 export default function Footer() {
   const pathname = usePathname();

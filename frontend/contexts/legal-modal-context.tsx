@@ -1,6 +1,6 @@
 'use client';
 import React, { createContext, useContext, ReactNode } from 'react';
-import { useLegalModal, LegalType } from '@/hooks/useLegalModal';
+import { useLegalModal, LegalType } from '@/hooks/use-legal-modal';
 import LegalModal from '@/components/legal/legal-modal';
 
 interface LegalModalContextType {

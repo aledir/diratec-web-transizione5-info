@@ -5,9 +5,9 @@ import ChatInput from './chat-input';
 import LoadingIndicator from './loading-indicator';
 import PredefinedQuestions from './predefined-questions';
 import UserSessionManager from './user-session-manager';
-import { UserSession, updateLastActivity, ConversationData, saveConversation, extractConversationTitle } from '../../utils/sessionManager';
-import useCheshireCat from '../../hooks/useCheshireCat';
-import useSharedConfig from '../../hooks/useSharedConfig';
+import { UserSession, updateLastActivity, ConversationData, saveConversation, extractConversationTitle } from '../../utils/session-manager';
+import useCheshireCat from '../../hooks/use-cheshire-cat';
+import useSharedConfig from '../../hooks/use-shared-config';
 import styles from './chat.module.css';
 
 // Implementiamo throttle direttamente in questo file per evitare problemi di importazione

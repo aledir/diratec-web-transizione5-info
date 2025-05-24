@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useRef } from 'react';
-import { useAuthContext } from '../../contexts/AuthContext';
+import { useAuthContext } from '../../contexts/auth-context';
 
 interface TokenStreamerProps {
   onToken: (token: string) => void;
