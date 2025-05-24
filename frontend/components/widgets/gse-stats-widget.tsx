@@ -1,5 +1,6 @@
-"use client"
-import { useState, useEffect, useRef } from 'react';
+"use client";
+
+import React, { useState, useEffect, useRef } from 'react';
 
 // Tipo per le statistiche GSE
 interface GSEStats {
@@ -10,7 +11,7 @@ interface GSEStats {
   ultimo_aggiornamento: string;
 }
 
-export default function GSEStatsWidget() {
+const GSEStatsWidget: React.FC = () => {
   // Stati
   const [stats, setStats] = useState<GSEStats | null>(null);
   const [loading, setLoading] = useState(true);
@@ -21,7 +22,7 @@ export default function GSEStatsWidget() {
   const widgetRef = useRef<HTMLDivElement>(null);
   
   // Funzione per formattare i numeri come valuta
-  const formatCurrency = (value: string) => {
+  const formatCurrency = (value: string): string => {
     try {
       // I valori arrivano già nel formato italiano con la virgola come separatore decimale
       // Es: "5.338.991.323,11"
@@ -51,17 +52,15 @@ export default function GSEStatsWidget() {
   };
 
   // Funzione per recuperare i dati
-  // Funzione fetchStats aggiornata per utilizzare la route API interna
-  const fetchStats = async (forceUpdate = false) => {
+  const fetchStats = async (forceUpdate = false): Promise<void> => {
     try {
       if (forceUpdate) setIsUpdating(true);
-      setLoading(true);
+      if (!stats) setLoading(true); // Solo se non abbiamo ancora dati
       
       // Memorizza la posizione di scroll prima dell'aggiornamento
       const scrollPosition = window.scrollY;
       
-      // Usa la nostra API route interna invece dell'endpoint diretto
-      // Non è più necessario passare l'API key!
+      // Usa la nostra API route interna
       const endpoint = forceUpdate ? '/api/gse-stats?forceUpdate=true' : '/api/gse-stats';
       console.log(`Fetching GSE stats from: ${endpoint}`);
       
@@ -80,15 +79,6 @@ export default function GSEStatsWidget() {
       
       const data = await response.json();
       console.log('GSE stats received:', data);
-      
-      // Verifica che i dati ricevuti abbiano il formato corretto con console.log dettagliato
-      if (data) {
-        console.log('Dati ricevuti:');
-        console.log('risorse_disponibili:', data.risorse_disponibili || (data.data && data.data.risorse_disponibili));
-        console.log('risorse_totali:', data.risorse_totali || (data.data && data.data.risorse_totali));
-        console.log('risorse_prenotate:', data.risorse_prenotate || (data.data && data.data.risorse_prenotate));
-        console.log('risorse_utilizzate:', data.risorse_utilizzate || (data.data && data.data.risorse_utilizzate));
-      }
       
       // Gestione diversa a seconda dell'endpoint chiamato
       if (forceUpdate) {
@@ -124,8 +114,10 @@ export default function GSEStatsWidget() {
       console.error('Errore nel recupero dei dati GSE:', err);
       const errorMessage = err instanceof Error ? err.message : 'Dati non disponibili. Riprova più tardi.';
       setError(errorMessage);
-      // RIMUOVI il fallback - forza l'errore per renderlo visibile
-      setStats(null); // Imposta stats a null per mostrare l'errore
+      // Se non abbiamo ancora dati, mantieni stats null per mostrare l'errore
+      if (!stats) {
+        setStats(null);
+      }
     } finally {
       setLoading(false);
       setIsUpdating(false);
@@ -143,89 +135,117 @@ export default function GSEStatsWidget() {
   }, []);
 
   // Handler per il click sul pulsante di aggiornamento
-  const handleRefresh = (e: React.MouseEvent) => {
+  const handleRefresh = (e: React.MouseEvent): void => {
     e.preventDefault();
     fetchStats(true);
   };
 
-  // Rendering durante caricamento
-  if (loading && !isUpdating && !stats) {
-    return (
-      <div ref={widgetRef} className="bg-white border border-gray-200 rounded-lg p-4 w-full shadow-md">
-        <div className="animate-pulse space-y-3">
-          <div className="h-6 bg-gray-200 rounded w-1/2"></div>
-          <div className="h-10 bg-gray-200 rounded w-3/4"></div>
-          <div className="space-y-2">
-            <div className="h-4 bg-gray-200 rounded w-full"></div>
-            <div className="h-4 bg-gray-200 rounded w-5/6"></div>
-            <div className="h-4 bg-gray-200 rounded w-4/6"></div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  // Rendering errore
-  if (error && !stats) {
-    return (
-      <div ref={widgetRef} className="bg-white border border-gray-200 rounded-lg p-4 shadow-md">
-        <div className="text-lg font-medium text-gray-800 mb-2">Statistiche Transizione 5.0</div>
-        <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-600 text-sm">
-          <div className="font-medium">Dati non disponibili</div>
-          <p>{error}</p>
-        </div>
-        <div className="mt-3 flex justify-center">
-          <button 
-            onClick={handleRefresh}
-            className="px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700 transition-colors"
-          >
-            Aggiorna dati
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  // Se non abbiamo dati e non c'è un errore o stiamo aggiornando, mostra il loader
-  if (!stats) {
-    return (
-      <div ref={widgetRef} className="bg-white border border-gray-200 rounded-lg p-4 w-full shadow-md">
-        <div className="animate-pulse space-y-3">
-          <div className="h-6 bg-gray-200 rounded w-1/2"></div>
-          <div className="h-10 bg-gray-200 rounded w-3/4"></div>
-          <div className="space-y-2">
-            <div className="h-4 bg-gray-200 rounded w-full"></div>
-            <div className="h-4 bg-gray-200 rounded w-5/6"></div>
-            <div className="h-4 bg-gray-200 rounded w-4/6"></div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   // Calcola percentuali per la visualizzazione grafica
-  // Assicurati di convertire correttamente i numeri in formato italiano
-  const numFromItalianFormat = (str: string) => {
+  const numFromItalianFormat = (str: string): number => {
     return parseFloat(str.replace(/\./g, '').replace(',', '.'));
   };
-  
+
+  // 🔥 LOADING PRINCIPALE - Rendering durante caricamento iniziale
+  if (loading && !stats) {
+    return (
+      <div ref={widgetRef} className="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
+        <div className="bg-emerald-600 text-white font-medium px-4 py-2 flex justify-between items-center">
+          <h3 className="text-lg">Risorse Transizione 5.0</h3>
+          <div className="flex items-center space-x-2">
+            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+          </div>
+        </div>
+        
+        <div className="p-4">
+          <div className="animate-pulse space-y-4">
+            {/* Skeleton per il valore principale */}
+            <div className="space-y-2">
+              <div className="h-6 bg-gray-200 rounded w-3/4"></div>
+              <div className="h-3 bg-gray-200 rounded w-full"></div>
+            </div>
+            
+            {/* Skeleton per le voci dettaglio */}
+            <div className="space-y-3">
+              <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-gray-200 rounded-sm"></div>
+                <div className="h-4 bg-gray-200 rounded flex-1"></div>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-gray-200 rounded-sm"></div>
+                <div className="h-4 bg-gray-200 rounded flex-1"></div>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-gray-200 rounded-sm"></div>
+                <div className="h-4 bg-gray-200 rounded flex-1"></div>
+              </div>
+            </div>
+            
+            {/* Skeleton per la nota in fondo */}
+            <div className="pt-3 border-t border-gray-100">
+              <div className="h-3 bg-gray-200 rounded w-2/3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Rendering errore (solo se non abbiamo dati)
+  if (error && !stats) {
+    return (
+      <div ref={widgetRef} className="bg-white border border-gray-200 rounded-lg shadow-md">
+        <div className="bg-emerald-600 text-white font-medium px-4 py-2 flex justify-between items-center">
+          <h3 className="text-lg">Risorse Transizione 5.0</h3>
+          <button 
+            onClick={handleRefresh}
+            disabled={isUpdating}
+            className="p-1 hover:bg-emerald-700 rounded"
+            title="Riprova"
+          >
+            <svg className={`h-4 w-4 text-white ${isUpdating ? 'animate-spin' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+          </button>
+        </div>
+        
+        <div className="p-4">
+          <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-600 text-sm">
+            <div className="font-medium mb-1">Dati non disponibili</div>
+            <p>{error}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Se non abbiamo dati ma non c'è errore specifico, fallback
+  if (!stats) {
+    return (
+      <div ref={widgetRef} className="bg-white border border-gray-200 rounded-lg shadow-md">
+        <div className="bg-emerald-600 text-white font-medium px-4 py-2 flex justify-between items-center">
+          <h3 className="text-lg">Risorse Transizione 5.0</h3>
+          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+        </div>
+        
+        <div className="p-4">
+          <div className="text-center text-gray-500">
+            Caricamento dati in corso...
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   const totaleNum = numFromItalianFormat(stats.risorse_totali);
   const disponibiliNum = numFromItalianFormat(stats.risorse_disponibili);
   const prenotateNum = numFromItalianFormat(stats.risorse_prenotate);
   const utilizzateNum = numFromItalianFormat(stats.risorse_utilizzate);
   
-  console.log('Valori numerici convertiti:', {
-    totaleNum,
-    disponibiliNum,
-    prenotateNum,
-    utilizzateNum
-  });
-  
   const disponibiliPercent = isNaN(totaleNum) || totaleNum === 0 ? 0 : (disponibiliNum / totaleNum) * 100;
   const prenotatePercent = isNaN(totaleNum) || totaleNum === 0 ? 0 : (prenotateNum / totaleNum) * 100;
   const utilizzatePercent = isNaN(totaleNum) || totaleNum === 0 ? 0 : (utilizzateNum / totaleNum) * 100;
 
-  // Se stiamo aggiornando, mostra un indicatore ma mantieni i dati visibili
+  // Overlay per aggiornamento (mantiene i dati visibili)
   const updatingOverlay = isUpdating && (
     <div className="absolute inset-0 bg-white/80 flex items-center justify-center z-10 rounded-lg">
       <div className="flex flex-col items-center">
@@ -235,7 +255,7 @@ export default function GSEStatsWidget() {
     </div>
   );
 
-  // Rendering del widget con dati
+  // 🎯 RENDERING PRINCIPALE - Widget con dati
   return (
     <div ref={widgetRef} className="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden relative">
       {updatingOverlay}
@@ -252,7 +272,7 @@ export default function GSEStatsWidget() {
             title="Aggiorna dati"
             disabled={isUpdating}
           >
-            <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className={`h-4 w-4 text-white ${isUpdating ? 'animate-spin' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
             </svg>
           </button>
@@ -316,4 +336,6 @@ export default function GSEStatsWidget() {
       </div>
     </div>
   );
-}
+};
+
+export default GSEStatsWidget;
