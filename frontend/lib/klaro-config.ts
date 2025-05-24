@@ -8,7 +8,7 @@ export const klaroConfig: KlaroConfig = {
   // Elemento dove inserire Klaro (di default body)
   elementID: 'klaro',
   
-  // Stile del banner 
+  // Stile del banner - MANTENUTO ORIGINALE
   styling: {
     theme: ['light', 'bottom'],
   },
@@ -45,8 +45,13 @@ export const klaroConfig: KlaroConfig = {
   
   // Lingue supportate
   lang: 'it',
+
+  // ✨ AGGIUNTA MINIMA: Link privacy policy per modal
+  privacyPolicy: {
+    it: '/privacy-policy'
+  },
   
-  // Configurazione dei servizi
+  // Configurazione dei servizi - MANTENUTA ORIGINALE
   services: [
     {
       // Google Analytics 4
@@ -73,7 +78,7 @@ export const klaroConfig: KlaroConfig = {
     },
     
     {
-      // Cookie tecnici necessari - DESCRIZIONE CORRETTA
+      // Cookie tecnici necessari - DESCRIZIONE CORRETTA MANTENUTA
       name: 'required',
       title: 'Cookie Tecnici',
       description: 'Utilizziamo i Cookie Tecnici per il funzionamento dell\'assistente virtuale AI. Sono essenziali per mantenere la continuità della conversazione e associare le risposte dell\'AI alla tua sessione di chat.',
@@ -90,7 +95,7 @@ export const klaroConfig: KlaroConfig = {
     }
   ],
   
-  // Definizione degli scopi - AGGIORNATA
+  // Definizione degli scopi - MANTENUTA ORIGINALE
   purposes: [
     {
       name: 'functional',
@@ -104,7 +109,7 @@ export const klaroConfig: KlaroConfig = {
     }
   ],
 
-  // Traduzioni in italiano
+  // Traduzioni in italiano - MANTENUTE ORIGINALI
   translations: {
     it: {
       consentModal: {

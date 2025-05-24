@@ -1,7 +1,9 @@
+// app/layout.tsx
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { AuthProvider } from '@/contexts/AuthContext';
+import { LegalModalProvider } from '@/contexts/LegalModalContext';
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
 import KlaroWrapper from '@/components/analytics/KlaroWrapper';
 
@@ -40,7 +42,9 @@ export default function RootLayout({
         )}
         
         <AuthProvider>
-          {children}
+          <LegalModalProvider>
+            {children}
+          </LegalModalProvider>
         </AuthProvider>
       </body>
     </html>

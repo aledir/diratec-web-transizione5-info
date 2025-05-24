@@ -3,13 +3,6 @@
 import { useEffect } from 'react';
 import { klaroConfig } from '@/lib/klaro-config';
 
-declare global {
-  interface Window {
-    klaro?: any;
-    klaroConfig?: any;
-  }
-}
-
 export default function KlaroWrapper() {
   useEffect(() => {
     // Imposta la configurazione globale

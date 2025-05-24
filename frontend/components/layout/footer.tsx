@@ -1,10 +1,29 @@
-// components/layout/footer.tsx - Versione Corretta Completa
+// components/layout/footer.tsx - Versione con Modal Intelligenti
 "use client"
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import { useLegalModalContext } from '@/contexts/LegalModalContext';
 
 export default function Footer() {
+  const pathname = usePathname();
+  const { openModal } = useLegalModalContext();
+  
+  // Determina se siamo sulla homepage o su pagine di contenuto
+  const isHomepage = pathname === '/';
+  const isContentPage = pathname.includes('/docs') || pathname.includes('/chi-siamo') || pathname.includes('/certificazioni');
+  
+  // Logica intelligente per link legali
+  const handleLegalClick = (type: 'termini-uso' | 'privacy-policy' | 'cookie-policy', e: React.MouseEvent) => {
+    // Su homepage e pagine di contenuto, usa modal per UX fluida
+    if (isHomepage || isContentPage) {
+      e.preventDefault();
+      openModal(type);
+    }
+    // Su altre pagine (es. già su pagine legali), lascia il comportamento normale del Link
+  };
+
   return (
     <footer className="bg-gray-800 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -135,7 +154,7 @@ export default function Footer() {
           </div>
         </div>
         
-        {/* Footer bottom - VERSIONE CORRETTA */}
+        {/* Footer bottom - VERSIONE CON MODAL INTELLIGENTI */}
         <div className="border-t border-gray-700 mt-10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-400 text-sm">
@@ -144,15 +163,28 @@ export default function Footer() {
               <span className="md:ml-2">Servizio di consulenza per la Transizione 5.0</span>
             </div>
             <div className="flex space-x-4 text-sm">
-              <Link href="/termini-uso" className="text-gray-400 hover:text-white">
+              {/* Link intelligenti che decidono modal vs pagina */}
+              <Link 
+                href="/termini-uso" 
+                onClick={(e) => handleLegalClick('termini-uso', e)}
+                className="text-gray-400 hover:text-white"
+              >
                 Termini d'Uso
               </Link>
               <span className="text-gray-600">•</span>
-              <Link href="/privacy-policy" className="text-gray-400 hover:text-white">
+              <Link 
+                href="/privacy-policy" 
+                onClick={(e) => handleLegalClick('privacy-policy', e)}
+                className="text-gray-400 hover:text-white"
+              >
                 Privacy Policy
               </Link>
               <span className="text-gray-600">•</span>
-              <Link href="/cookie-policy" className="text-gray-400 hover:text-white">
+              <Link 
+                href="/cookie-policy" 
+                onClick={(e) => handleLegalClick('cookie-policy', e)}
+                className="text-gray-400 hover:text-white"
+              >
                 Cookie Policy
               </Link>
               <span className="text-gray-600">•</span>
@@ -168,6 +200,15 @@ export default function Footer() {
               </button>
             </div>
           </div>
+
+          {/* Indicatore modalità (solo in development) */}
+          {process.env.NODE_ENV === 'development' && (
+            <div className="mt-4 text-center">
+              <span className="text-xs text-gray-500">
+                {isHomepage || isContentPage ? '🪟 Modal Mode' : '📄 Page Mode'} | Current: {pathname}
+              </span>
+            </div>
+          )}
         </div>
       </div>
     </footer>
