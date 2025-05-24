@@ -8,8 +8,8 @@ Il presente servizio è fornito da **DIRATEC S.R.L.**:
 - **Codice Fiscale e P.IVA**: 04274200981
 - **Numero REA**: BS-601891
 - **Capitale sociale**: € 10.000,00 i.v.
-- **Email**: info@diratec.it
-- **Telefono**: +39 030 808 8065
+- **Email**: [info@diratec.it](mailto:info@diratec.it)
+- **Telefono**: [+39 030 808 8065](tel:+390308088065)
 
 ### 1.2 Definizioni
 Ai fini dei presenti Termini d'uso, si intende per:
@@ -145,7 +145,7 @@ I presenti Termini d'uso sono disciplinati dalla legge italiana.
 
 ### 10.2 Tentativo di Risoluzione Amichevole
 Prima di adire le vie legali, le parti si impegnano a tentare una risoluzione amichevole della controversia mediante:
-- comunicazione scritta dettagliata della controversia inviata a info@diratec.it;
+- comunicazione scritta dettagliata della controversia inviata a [info@diratec.it](mailto:info@diratec.it);
 - periodo di 30 giorni per il tentativo di risoluzione diretta tra le parti;
 - eventuale ricorso a procedure di conciliazione presso organismi riconosciuti.
 
@@ -165,13 +165,13 @@ Per controversie di valore non superiore a € 5.000,00, le parti si impegnano p
 
 ### 11.1 Supporto Tecnico
 Per problemi tecnici relativi al Servizio:
-- **Email**: info@diratec.it
-- **Telefono**: +39 030 808 8065
+- **Email**: [info@diratec.it](mailto:info@diratec.it)
+- **Telefono**: [+39 030 808 8065](tel:+390308088065)
 
 ### 11.2 Informazioni Commerciali
 Per informazioni sui servizi di consulenza:
-- **Email**: info@diratec.it
-- **Sito web**: www.diratec.it
+- **Email**: [info@diratec.it](mailto:info@diratec.it)
+- **Sito web**: [www.diratec.it](https://www.diratec.it)
 
 ## 12. Disposizioni Finali
 
@@ -184,9 +184,13 @@ I presenti Termini d'uso, insieme all'Informativa Privacy, costituiscono l'accor
 ### 12.3 Accettazione
 L'utilizzo del Servizio comporta l'accettazione integrale dei presenti Termini d'uso.
 
+### 12.4 Difesa in Giudizio
+I Dati Personali dell'Utente possono essere utilizzati da parte di DIRATEC S.R.L. in giudizio o nelle fasi preparatorie alla sua eventuale instaurazione per la difesa da abusi nell'utilizzo del Servizio o dei servizi connessi da parte dell'Utente.
+L'Utente dichiara di essere consapevole che DIRATEC S.R.L. potrebbe essere obbligata a rivelare i Dati per ordine delle autorità pubbliche.
+
 ---
 
 **Data ultima modifica**: 23 maggio 2025  
 **Versione**: 1.0
 
-Per domande sui presenti Termini d'uso, contattare: info@diratec.it
+Per domande sui presenti Termini d'uso, contattare: [info@diratec.it](mailto:info@diratec.it)

@@ -6,8 +6,8 @@
 - **Sede legale**: Via Brescia 108 G/H, 25018 Montichiari (BS), Italia
 - **Codice Fiscale e P.IVA**: 04274200981
 - **Numero REA**: BS-601891
-- **Email**: info@diratec.it
-- **Telefono**: +39 030 808 8065
+- **Email**: [info@diratec.it](mailto:info@diratec.it)
+- **Telefono**: [+39 030 808 8065](tel:+390308088065)
 
 ## 2. Tipologie di Dati Raccolti
 
@@ -37,10 +37,17 @@
 
 ## 4. Base Giuridica del Trattamento
 
+### 4.1 Basi Giuridiche Principali
 - **Consenso**: per finalità di marketing e cookie non tecnici
 - **Interesse legittimo**: per l'erogazione del servizio e il miglioramento della piattaforma
 - **Adempimento contrattuale**: per l'esecuzione dei servizi richiesti
 - **Obbligo legale**: per adempimenti normativi e fiscali
+
+### 4.2 Dettaglio delle Basi Giuridiche
+- **Art. 6, par. 1, lett. a) GDPR - Consenso**: per finalità di marketing, profilazione e cookie analitici
+- **Art. 6, par. 1, lett. b) GDPR - Contratto**: per l'erogazione del servizio di assistenza
+- **Art. 6, par. 1, lett. c) GDPR - Obbligo legale**: per adempimenti fiscali e normativi
+- **Art. 6, par. 1, lett. f) GDPR - Interesse legittimo**: per miglioramento del servizio, sicurezza, e lead generation B2B nel settore delle agevolazioni fiscali
 
 ## 5. Modalità di Trattamento
 
@@ -105,16 +112,20 @@ Il servizio non è destinato a minori di 16 anni. Non raccogliamo consapevolment
 
 Ci riserviamo il diritto di modificare questa informativa. Le modifiche sostanziali saranno comunicate tramite avviso sul sito web.
 
-## 11. Contatti
+## 11. Log di Sistema e Manutenzione
+
+Per necessità legate al funzionamento ed alla manutenzione, il Servizio e gli eventuali servizi terzi utilizzati potrebbero raccogliere log di sistema, ossia file che registrano le interazioni e che possono contenere anche Dati Personali, quali l'indirizzo IP dell'Utente.
+
+## 12. Contatti
 
 Per esercitare i tuoi diritti o per qualsiasi domanda:
 
-**Email**: info@diratec.it  
-**Telefono**: +39 030 808 8065  
+**Email**: [info@diratec.it](mailto:info@diratec.it)  
+**Telefono**: [+39 030 808 8065](tel:+390308088065)  
 **Posta**: Via Brescia 108 G/H, 25018 Montichiari (BS)
 
 **Autorità di Controllo**: Garante per la Protezione dei Dati Personali  
-Website: www.gpdp.it
+Website: [www.gpdp.it](https://www.gpdp.it)
 
 ---
 
